@@ -13,6 +13,6 @@ interface WeatherService {
     @GET("current")
     suspend fun getWeatherForCity(
         @Query("query") city: String,
-        @Query("access_key") key: String = BuildConfig.WEATHER_API_KEY
+        @Query("access_key") key: String = ""
     ): NetworkWeatherResponse
 }

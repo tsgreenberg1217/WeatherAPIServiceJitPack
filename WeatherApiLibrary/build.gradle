@@ -3,9 +3,9 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
 }
-def apikeyPropertiesFile = rootProject.file("apikey.properties")
-def apikeyProperties = new Properties()
-apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
+//def apikeyPropertiesFile = rootProject.file("apikey.properties")
+//def apikeyProperties = new Properties()
+//apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
 
 
 android {
@@ -15,7 +15,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 31
 
-        buildConfigField("String", "WEATHER_API_KEY", apikeyProperties['WEATHER_API_KEY'])
+//        buildConfigField("String", "WEATHER_API_KEY", apikeyProperties['WEATHER_API_KEY'])
 
     }
 
