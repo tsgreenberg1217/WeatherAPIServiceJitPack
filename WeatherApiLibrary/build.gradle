@@ -4,6 +4,9 @@ plugins {
     id 'kotlin-kapt'
     id 'maven-publish'
 }
+
+group = 'com.github.tsgreenberg1217'
+version = '1.0'
 //def apikeyPropertiesFile = rootProject.file("apikey.properties")
 //def apikeyProperties = new Properties()
 //apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
@@ -41,4 +44,18 @@ dependencies {
 
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.tsgreenberg1217'
+                artifactId = 'weather-service-library'
+                version = '0.1.5'
+            }
+        }
+    }
 }
